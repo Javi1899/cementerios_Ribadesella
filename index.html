@@ -6,107 +6,54 @@
     <title>Cementerios de Ribadesella</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f9;
-            color: #333;
+            padding: 40px 20px;
             text-align: center;
         }
         h1 {
-            color: #2c3e50;
-            margin-bottom: 20px;
+            color: #333;
+            margin-bottom: 30px;
         }
-        .map-container {
-            margin: 20px auto;
-            max-width: 800px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        iframe {
-            width: 100%;
-            height: 450px;
-            border: 0;
-        }
-        .buttons-container {
+        .botones {
+            max-width: 600px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            max-width: 600px;
-            margin: 30px auto;
+            gap: 12px;
         }
-        .btn {
-            display: inline-block;
-            width: 100%;
-            padding: 12px 20px;
-            background-color: #3498db;
+        .botones a {
+            display: block;
+            background: #667eea;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            box-sizing: border-box;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.2s;
         }
-        .btn:hover {
-            background-color: #2980b9;
+        .botones a:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
-
     <h1>Cementerios de Ribadesella</h1>
-
-    <!-- Contenedor del mapa de Google Maps centrado en la zona -->
-    <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23918.47155694857!2d-5.085!3d43.445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1600000000000!5m2!1ses!2ses" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
+    <div class="botones">
+        <a href="https://www.google.com/maps/search/?api=1&query=43.427004036160746,-5.060705177171253" target="_blank">Cementerio parroquial de Santianes (Omedina)</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.44114346798638,-5.063925154828767" target="_blank">Iglesia de Santa María, Junco</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.44462755551275,-5.102163609664332" target="_blank">Iglesia de San Salvador Moro</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.457384710152624,-5.102163278470763" target="_blank">Cementerio del Carmen (Fresno)</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.447724601549936,-5.034919655242772" target="_blank">Cementerio de Meluerda</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.464896961601454,-5.110377031516484" target="_blank">Cementerio parroquial de Leces (San Esteban de Leces)</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.45265382518473,-5.139424416144143" target="_blank">Cementerio parroquial de Llinares (Linares)</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.46082056855123,-5.055925484553721" target="_blank">Cementerio Municipal de Ribadesella</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.45259119248851,-5.087758424463346" target="_blank">Cementerio parroquial de Samiguel de Ucio</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.44241047974513,-4.989802978614938" target="_blank">Cementerio de Cuerres</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.42993688370504,-5.152974054482134" target="_blank">Cementerio de Calabres</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=43.47345362022675,-5.149548290696805" target="_blank">Cementerio de Berbes</a>
     </div>
-
-    <!-- Botones para cada cementerio -->
-    <div class="buttons-container">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=43.427004036160746,-5.060705177171253" target="_blank">
-            Cementerio parroquial de Santianes (Omedina)
-        </a>
-        
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=43.44114346798638,-5.063925154828767" target="_blank">
-            Iglesia de Santa María, Junco
-        </a>
-        
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=43.44462755551275,-5.102163609664332" target="_blank">
-            Iglesia de San Salvador Moro
-        </a>
-        
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=43.457384710152624,-5.102163278470763" target="_blank">
-            Cementerio del Carmen (Fresno)
-        </a>
-        
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=43.447724601549936,-5.034919655242772" target="_blank">
-            Cementerio de Meluerda
-        </a>
-        
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=43.464896961601454,-5.110377031516484" target="_blank">
-            Cementerio parroquial de Leces (San Esteban de Leces)
-        </a>
-        
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=43.45265382518473,-5.139424416144143" target="_blank">
-            Cementerio parroquial de Llinares (Linares)
-        </a>
-        
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=43.46082056855123,-5.055925484553721" target="_blank">
-            Cementerio Municipal de Ribadesella
-        </a>
-        
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=43.45259119248851,-5.087758424463346" target="_blank">
-            Cementerio parroquial de Samiguel de Ucio
-        </a>
-    </div>
-
 </body>
 </html>
