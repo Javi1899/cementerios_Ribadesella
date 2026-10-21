@@ -3,57 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cementerios de Ribadesella</title>
+    <title>🎃 Cementerios de Ribadesella 🕸️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --naranja: #ff7518;
+            --naranja-claro: #ffb347;
+            --morado: #8a2be2;
+            --hueso: #f5e9d0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 40px 20px;
-            text-align: center;
+            min-height: 100vh;
+            background: #000 radial-gradient(ellipse at 50% -20%, #1a0b2e 0%, #0d0518 45%, #000 100%);
+            color: var(--hueso);
+            font-family: 'Cinzel', serif;
+            overflow-x: hidden;
+            padding: 40px 20px 120px;
         }
+        /* 🌕 Luna llena */
+        .moon {
+            position: fixed; top: 45px; right: 7%;
+            width: 110px; height: 110px; border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #fffbe6, #f7e8a9 60%, #d9c47a);
+            box-shadow: 0 0 70px 25px rgba(255,244,180,.22);
+            z-index: 0;
+        }
+        /* 🦇 Murciélagos volando */
+        .bat { position: fixed; font-size: 26px; z-index: 0; opacity: .75; animation: vuelo linear infinite; }
+        .b1 { top: 12%; animation-duration: 16s; }
+        .b2 { top: 22%; animation-duration: 21s; animation-delay: 4s; font-size: 18px; }
+        .b3 { top: 7%;  animation-duration: 13s; animation-delay: 8s; font-size: 32px; }
+        @keyframes vuelo { from { transform: translateX(-10vw); } to { transform: translateX(110vw); } }
+        /* 👻 Fantasma flotante */
+        .ghost { position: fixed; left: 6%; bottom: 18%; font-size: 44px; z-index: 0; opacity: .5; animation: flota 6s ease-in-out infinite; }
+        @keyframes flota {
+            0%, 100% { transform: translateY(0) rotate(-4deg); }
+            50%      { transform: translateY(-30px) rotate(4deg); }
+        }
+        /* 🌫️ Niebla inferior */
+        .fog {
+            position: fixed; inset: auto 0 0 0; height: 35vh; z-index: 0; pointer-events: none;
+            background: radial-gradient(ellipse at 30% 100%, rgba(138,43,226,.14), transparent 60%),
+                        radial-gradient(ellipse at 75% 100%, rgba(255,117,24,.10), transparent 60%);
+        }
+        /* 🪦 Silueta de cementerio */
+        .graveyard {
+            position: fixed; bottom: -6px; left: 0; right: 0; z-index: 0;
+            display: flex; justify-content: space-around;
+            font-size: 3rem; opacity: .22; filter: grayscale(1) brightness(.6); pointer-events: none;
+        }
+        /* Cabecera con título parpadeante */
+        header { position: relative; z-index: 1; text-align: center; margin-bottom: 45px; }
         h1 {
-            color: #333;
-            margin-bottom: 30px;
+            font-family: 'Creepster', cursive;
+            font-size: clamp(2.4rem, 7vw, 4.3rem);
+            letter-spacing: 4px;
+            color: var(--naranja);
+            text-shadow: 0 0 12px rgba(255,117,24,.8), 0 0 45px rgba(255,117,24,.4);
+            animation: parpadeo 4.5s infinite;
         }
-        .botones {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+        @keyframes parpadeo {
+            0%, 42%, 53%, 100% { opacity: 1; }
+            45% { opacity: .55; text-shadow: none; }
+            47% { opacity: .9; }
+            50% { opacity: .4;  text-shadow: none; }
         }
-        .botones a {
-            display: block;
-            background: #667eea;
-            color: white;
+        .subtitle { margin-top: 10px; color: #c9a6ff; letter-spacing: 3px; font-size: 1rem; text-transform: uppercase; }
+        /* Botones estilo cristal con brillo naranja */
+        .botonera { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; display: grid; gap: 15px; }
+        .boton {
+            display: flex; align-items: center; gap: 16px;
+            padding: 17px 22px;
+            background: linear-gradient(135deg, rgba(255,117,24,.10), rgba(138,43,226,.14));
+            border: 1px solid rgba(255,117,24,.35);
+            border-radius: 14px;
+            color: var(--hueso);
             text-decoration: none;
-            padding: 14px 20px;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: background 0.3s, transform 0.2s;
+            font-size: 1.02rem; letter-spacing: .6px;
+            backdrop-filter: blur(5px);
+            transition: transform .25s, box-shadow .25s, border-color .25s, color .25s;
         }
-        .botones a:hover {
-            background: #764ba2;
-            transform: translateY(-2px);
+        .boton .emoji { font-size: 1.7rem; filter: drop-shadow(0 0 7px rgba(255,117,24,.55)); }
+        .boton:hover {
+            transform: translateY(-3px) scale(1.02);
+            border-color: var(--naranja);
+            color: var(--naranja-claro);
+            box-shadow: 0 0 26px rgba(255,117,24,.45), inset 0 0 18px rgba(255,117,24,.12);
+        }
+        footer { position: relative; z-index: 1; text-align: center; margin-top: 55px; color: #7d6a99; font-size: .85rem; letter-spacing: 2px; }
+        @media (max-width: 600px) {
+            .moon { width: 70px; height: 70px; top: 20px; right: 12px; }
+            .graveyard { font-size: 2rem; }
+            .ghost { font-size: 32px; }
         }
     </style>
 </head>
 <body>
-    <h1>Cementerios de Ribadesella</h1>
-    <div class="botones">
-        <a href="https://www.google.com/maps/search/?api=1&query=43.427004036160746,-5.060705177171253" target="_blank">Cementerio parroquial de Santianes (Omedina)</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.44114346798638,-5.063925154828767" target="_blank">Iglesia de Santa María, Junco</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.44462755551275,-5.102163609664332" target="_blank">Iglesia de San Salvador Moro</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.457384710152624,-5.102163278470763" target="_blank">Cementerio del Carmen (Fresno)</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.447724601549936,-5.034919655242772" target="_blank">Cementerio de Meluerda</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.464896961601454,-5.110377031516484" target="_blank">Cementerio parroquial de Leces (San Esteban de Leces)</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.45265382518473,-5.139424416144143" target="_blank">Cementerio parroquial de Llinares (Linares)</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.46082056855123,-5.055925484553721" target="_blank">Cementerio Municipal de Ribadesella</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.45259119248851,-5.087758424463346" target="_blank">Cementerio parroquial de Samiguel de Ucio</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.44241047974513,-4.989802978614938" target="_blank">Cementerio de Cuerres</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.42993688370504,-5.152974054482134" target="_blank">Cementerio de Calabres</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=43.47345362022675,-5.149548290696805" target="_blank">Cementerio de Berbes</a>
-    </div>
+    <div class="moon"></div>
+    <span class="bat b1">🦇</span>
+    <span class="bat b2">🦇</span>
+    <span class="bat b3">🦇</span>
+    <span class="ghost">👻</span>
+    <div class="fog"></div>
+    <div class="graveyard"><span>🪦</span><span>⚰️</span><span>🪦</span><span>🪦</span><span>⚰️</span><span>🪦</span></div>
+
+    <header>
+        <h1>Cementerios de Ribadesella</h1>
+        <p class="subtitle">🎃 Ruta de desbroce encantada 🕸️</p>
+    </header>
+
+    <main class="botonera">
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.427004036160746,-5.060705177171253" target="_blank"><span class="emoji">🪦</span>Cementerio parroquial de Santianes (Omedina)</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.44114346798638,-5.063925154828767" target="_blank"><span class="emoji">⛪</span>Iglesia de Santa María, Junco</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.44462755551275,-5.102163609664332" target="_blank"><span class="emoji">⛪</span>Iglesia de San Salvador Moro</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.457384710152624,-5.102163278470763" target="_blank"><span class="emoji">🕯️</span>Cementerio del Carmen (Fresno)</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.447724601549936,-5.034919655242772" target="_blank"><span class="emoji">🪦</span>Cementerio de Meluerda</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.464896961601454,-5.110377031516484" target="_blank"><span class="emoji">⚰️</span>Cementerio parroquial de Leces (San Esteban de Leces)</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.45265382518473,-5.139424416144143" target="_blank"><span class="emoji">🪦</span>Cementerio parroquial de Llinares (Linares)</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.46082056855123,-5.055925484553721" target="_blank"><span class="emoji">⚰️</span>Cementerio Municipal de Ribadesella</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.45259119248851,-5.087758424463346" target="_blank"><span class="emoji">👻</span>Cementerio parroquial de Samiguel de Ucio</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.44241047974513,-4.989802978614938" target="_blank"><span class="emoji">🪦</span>Cementerio de Cuerres</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.42993688370504,-5.152974054482134" target="_blank"><span class="emoji">🕸️</span>Cementerio de Calabres</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&query=43.47345362022675,-5.149548290696805" target="_blank"><span class="emoji">🎃</span>Cementerio de Berbes</a>
+    </main>
+
+    <footer>🕯️ Que la oscuridad guíe tu desbroce 🕯️</footer>
 </body>
 </html>
